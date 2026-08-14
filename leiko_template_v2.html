@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@font-face { font-family:'Archivo'; src:url('fonts/Archivo.ttf'); font-weight:100 900; }
+@font-face { font-family:'Space Grotesk'; src:url('fonts/SpaceGrotesk.ttf'); font-weight:300 700; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Regular.ttf'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Italic.ttf'); font-weight:400; font-style:italic; }
+body { margin:0; background:#111; }
+[data-screen-label] * { visibility:hidden; }
+[data-slot], [data-slot] * { visibility:visible; }
+</style></head><body>
+<div data-screen-label="1a Stat" style="width:1080px; height:1350px; background-image:url(masters/blank_1a.png); background-size:1080px 1350px; position:relative; overflow:hidden; isolation:isolate;">
+        
+        
+        
+        <div style="position:absolute; top:0; left:0; right:0; height:150px; display:flex; align-items:center; justify-content:space-between; padding:0 72px; box-sizing:border-box;">
+          <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:30px; letter-spacing:.34em; color:#0A1E3C;">LEIKO</span>
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:19px; letter-spacing:.2em; color:#0A1E3C; opacity:.55;">MEASURED, NOT GUESSED</span>
+        </div>
+
+        <div style="position:absolute; top:130px; left:72px; width:900px;">
+          <div data-slot style="font-family:'Archivo',sans-serif; font-weight:900; font-size:300px; line-height:.8; letter-spacing:-.05em; color:#0A1E3C;">{{STAT_A}}<span data-slot style="font-family:'Instrument Serif',serif; font-weight:400; font-style:italic; font-size:170px; letter-spacing:0; padding:0 18px; color:#0A1E3C; opacity:.75;">{{STAT_MID}}</span><span data-slot style="color:#FF6B5B;">{{STAT_B}}</span></div>
+          <div data-slot style="width:210px; height:12px; background:#FF6B5B; margin:52px 0 40px 6px;"></div>
+          <div data-slot style="font-family:'Instrument Serif',serif; font-size:78px; line-height:1.04; color:#0A1E3C; max-width:760px; text-wrap:pretty;">{{STAT_SUB}}</div>
+          <div data-slot style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:44px; line-height:1.25; color:#FF6B5B; margin-top:30px; max-width:560px;">{{STAT_KICK}}</div>
+        </div>
+
+        
+
+        <div style="position:absolute; left:72px; bottom:64px; width:420px; display:flex; flex-direction:column; gap:14px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; letter-spacing:.16em; color:#0A1E3C; white-space:nowrap;">MEASURE IT ON YOUR WRIST</span>
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#0A1E3C; opacity:.6;">leiko.health</span>
+        </div>
+      </div>
+
+<!-- CARD BREAK -->
+
+<div data-screen-label="1b Myth vs Fact" style="width:1080px; height:1350px; background-image:url(masters/blank_1b.png); background-size:1080px 1350px; position:relative; overflow:hidden; isolation:isolate;">
+        <div style="position:absolute; top:0; left:0; right:0; height:620px; background:#0A1E3C;"></div>
+        
+
+        <div style="position:absolute; top:76px; left:72px; right:72px;">
+          <div style="display:flex; align-items:center; gap:18px;">
+            <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:22px; letter-spacing:.3em; color:#FF6B5B;">MYTH</span>
+            <span style="flex:1; height:1px; background:#F6F1E7; opacity:.25;"></span>
+          </div>
+          <div data-slot style="font-family:'Instrument Serif',serif; font-style:italic; font-size:96px; line-height:1.02; color:#F6F1E7; margin-top:40px; max-width:470px; text-wrap:pretty; position:relative;">
+            {{MYTH}}
+            <span style="position:absolute; left:-14px; top:50%; width:500px; height:7px; background:#FF6B5B; transform:rotate(-3deg);"></span>
+          </div>
+        </div>
+
+        <div style="position:absolute; top:700px; left:72px; width:420px;">
+          <div style="display:flex; align-items:center; gap:18px;">
+            <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:22px; letter-spacing:.3em; color:#0A1E3C;">FACT</span>
+            <span style="flex:1; height:1px; background:#0A1E3C; opacity:.25;"></span>
+          </div>
+          <div data-slot style="font-family:'Archivo',sans-serif; font-weight:800; font-size:62px; line-height:1.02; letter-spacing:-.02em; color:#0A1E3C; margin-top:38px;">{{FACT_HEAD}}</div>
+          <div data-slot style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:34px; line-height:1.3; color:#0A1E3C; opacity:.78; margin-top:26px; text-wrap:pretty;">{{FACT_SUB}}</div>
+        </div>
+
+        
+
+        <div style="position:absolute; left:72px; bottom:64px; display:flex; align-items:center; gap:18px;">
+          <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:26px; letter-spacing:.34em; color:#0A1E3C;">LEIKO</span>
+          <span style="width:52px; height:2px; background:#FF6B5B;"></span>
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:23px; color:#0A1E3C; opacity:.6;">leiko.health</span>
+        </div>
+      </div>
+
+<!-- CARD BREAK -->
+
+<div data-screen-label="1c Check on Mama" style="width:1080px; height:1350px; background-image:url(masters/blank_1c.png); background-size:1080px 1350px; position:relative; overflow:hidden; isolation:isolate;">
+        <div style="position:absolute; top:64px; left:72px; right:72px; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:26px; letter-spacing:.34em; color:#F6F1E7;">LEIKO</span>
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:19px; letter-spacing:.2em; color:#F6F1E7; opacity:.5;">A GIFT THAT WATCHES BACK</span>
+        </div>
+
+        <div style="position:absolute; top:176px; left:72px; width:940px;">
+          <div data-slot style="font-family:'Instrument Serif',serif; font-size:184px; line-height:.9; color:#F6F1E7; letter-spacing:-.02em;">{{GIFT_HEAD1}}<br>{{GIFT_HEAD2}}<span style="color:#FF6B5B;">.</span></div>
+        </div>
+
+        
+        
+
+        <div style="position:absolute; right:72px; top:690px; width:340px; text-align:right; display:flex; flex-direction:column; gap:26px;">
+          <div data-slot style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:34px; line-height:1.28; color:#F6F1E7; text-wrap:pretty;">{{GIFT_BODY}}</div>
+          <div style="width:100%; height:1px; background:#F6F1E7; opacity:.25;"></div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; letter-spacing:.24em; color:#FF6B5B;">REAL CUFF · 30 SECONDS</div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; line-height:1.35; color:#F6F1E7; opacity:.6;">Real cuff readings in 30 seconds. No clinic queue.</div>
+        </div>
+
+        <div style="position:absolute; right:0; bottom:0; background:#FF6B5B; padding:38px 72px 38px 60px; display:flex; align-items:center; gap:28px;">
+          <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:38px; letter-spacing:.04em; color:#0A1E3C;">PRESALE NOW OPEN</span>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:28px; color:#0A1E3C; opacity:.75;">leiko.health</span>
+        </div>
+      </div></body></html>

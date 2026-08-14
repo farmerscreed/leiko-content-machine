@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "market": "NG",
+    "issue_no": 1,
+    "origin": "content-machine",
+    "note": "Angle: education stat. Gift card alternates Mama (issue 1) / Papa (issue 2)."
+  },
+
+  "slots": {
+    "STAT_A": "1",
+    "STAT_MID": "in",
+    "STAT_B": "3",
+    "STAT_SUB": "Nigerian adults has high blood&nbsp;pressure.",
+    "STAT_KICK": "Most don't know.",
+    "MYTH": "“You'll feel it when your BP is&nbsp;high.”",
+    "FACT_HEAD": "Hypertension is quiet.",
+    "FACT_SUB": "The only way to know is to measure.",
+    "GIFT_HEAD1": "Check on",
+    "GIFT_HEAD2": "Mama",
+    "GIFT_BODY": "Her blood pressure on her wrist — on your phone, wherever you are."
+  },
+
+  "cards": {
+    "1a": {
+      "pillar": "educate",
+      "title": "1 in 3",
+      "claims_a_stat": true,
+      "caption": "One in three Nigerian adults is living with high blood pressure, and plenty of us have never once checked. A number you can see is a number you can take to your doctor. Leiko measures it on your wrist in thirty seconds — a real cuff, a real number. leiko.health",
+      "sources": [
+        { "body": "WHO", "name": "Hypertension in Nigeria — country profile", "url": "" }
+      ]
+    },
+
+    "1b": {
+      "pillar": "educate",
+      "title": "You'll feel it when your BP is high",
+      "claims_a_stat": true,
+      "caption": "Many people believe you can feel it when your BP is up. You cannot — which is exactly why measuring is the only way to know. Take a reading, write it down, and carry the numbers to your doctor. leiko.health",
+      "sources": [
+        { "body": "WHO", "name": "Most people with hypertension have no symptoms", "url": "" }
+      ]
+    },
+
+    "1c": {
+      "pillar": "caregiver",
+      "title": "Check on Mama",
+      "claims_a_stat": false,
+      "caption": "If Mama is far from you, her blood pressure does not have to be a mystery. She wears it, presses once, and the reading shows up on your phone wherever you are. That is the whole idea. leiko.health"
+    }
+  }
+}

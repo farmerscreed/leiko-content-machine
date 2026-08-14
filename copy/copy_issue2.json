@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "market": "NG",
+    "issue_no": 2,
+    "origin": "content-machine",
+    "note": "Angle: product stat. Gift card is Papa this issue (Mama was issue 1). The '30 sec' figure is a product spec, not a published statistic — confirm it against the device spec sheet before sending."
+  },
+
+  "slots": {
+    "STAT_A": "30",
+    "STAT_MID": "sec",
+    "STAT_B": "✓",
+    "STAT_SUB": "Wrist to reading. A real cuff, no clinic&nbsp;queue.",
+    "STAT_KICK": "Know in 30 seconds.",
+    "MYTH": "“Only old people get high&nbsp;BP.”",
+    "FACT_HEAD": "It can start in your 30s.",
+    "FACT_SUB": "Early checks catch what you can't feel.",
+    "GIFT_HEAD1": "Check on",
+    "GIFT_HEAD2": "Papa",
+    "GIFT_BODY": "His numbers on his wrist — and on your phone, wherever you are."
+  },
+
+  "cards": {
+    "1a": {
+      "pillar": "product",
+      "title": "30 sec",
+      "claims_a_stat": false,
+      "caption": "No queue, no waiting room, no half day gone. The cuff inflates on your wrist, holds, and gives you your number in about thirty seconds. It is the same method the cuff in the clinic uses — measured, not guessed. leiko.health"
+    },
+
+    "1b": {
+      "pillar": "educate",
+      "title": "Only old people get high BP",
+      "claims_a_stat": true,
+      "caption": "Plenty of us believe high blood pressure is something that comes later, with grey hair. It can start in your thirties, and it rarely announces itself. Check your numbers now and again, and carry them to your doctor. leiko.health",
+      "sources": [
+        { "body": "NCDC", "name": "Hypertension prevalence among younger Nigerian adults", "url": "" }
+      ]
+    },
+
+    "1c": {
+      "pillar": "caregiver",
+      "title": "Check on Papa",
+      "claims_a_stat": false,
+      "caption": "Papa will tell you he is fine. He probably is — but fine is easier to believe when you can see the number. He wears it, presses once, and the reading reaches your phone wherever you are. leiko.health"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "market": "NG",
+    "issue_no": 3,
+    "origin": "content-machine",
+    "note": "Angle: myth/fact — the 1a stat card is framed around the myth this issue busts (most people assume they'd know / their doctor would catch it). Gift card is Mama this issue (Papa was issue 2, Mama was issue 1)."
+  },
+
+  "slots": {
+    "STAT_A": "6",
+    "STAT_MID": "in",
+    "STAT_B": "10",
+    "STAT_SUB": "Adults with high blood pressure don't know it&nbsp;yet.",
+    "STAT_KICK": "Numbers don't guess.",
+    "MYTH": "“My doctor would have caught&nbsp;it.”",
+    "FACT_HEAD": "One visit isn't enough.",
+    "FACT_SUB": "Just 3 in 10 have it under&nbsp;control.",
+    "GIFT_HEAD1": "Check on",
+    "GIFT_HEAD2": "Mama",
+    "GIFT_BODY": "One press on her wrist. Her numbers reach your phone — wherever you are."
+  },
+
+  "cards": {
+    "1a": {
+      "pillar": "educate",
+      "title": "6 in 10",
+      "claims_a_stat": true,
+      "caption": "Nearly six in ten Nigerian adults with high blood pressure don't know it — because there's usually nothing to feel. A reading is the only way to find out, and Leiko checks yours in about thirty seconds, right on your wrist. Know the number, not just the guess. leiko.health",
+      "sources": [
+        {
+          "body": "WHO",
+          "name": "Hypertension country profile — Nigeria (WHO, 2023)",
+          "url": "https://cdn.who.int/media/docs/default-source/country-profiles/hypertension/hypertension-2023/hypertension_nga_2023.pdf",
+          "figure": "WHO 2023 Nigeria hypertension country profile: 47% prevalence among ages 30-79 (19.1M adults); 42% diagnosed; 51% of those diagnosed treated; 27% controlled. That leaves roughly 58% (about 6 in 10) not yet aware.",
+          "retrieved": "2026-08-09",
+          "status": "verified"
+        }
+      ]
+    },
+
+    "1b": {
+      "pillar": "educate",
+      "title": "My doctor would have caught it",
+      "claims_a_stat": true,
+      "caption": "Plenty of us assume a doctor would catch high blood pressure on a routine visit. But numbers shift day to day, and only three in ten Nigerians with high blood pressure have theirs under control. Checking often — not just once — is what actually catches it. leiko.health",
+      "sources": [
+        {
+          "body": "WHO",
+          "name": "Hypertension country profile — Nigeria (WHO, 2023)",
+          "url": "https://cdn.who.int/media/docs/default-source/country-profiles/hypertension/hypertension-2023/hypertension_nga_2023.pdf",
+          "figure": "27% of Nigerian adults with hypertension have their blood pressure under control, per WHO's 2023 country profile.",
+          "retrieved": "2026-08-09",
+          "status": "verified"
+        }
+      ]
+    },
+
+    "1c": {
+      "pillar": "caregiver",
+      "title": "Check on Mama",
+      "claims_a_stat": false,
+      "caption": "If Mama lives far from you, her blood pressure doesn't have to be a mystery. She wears it, presses once, and her reading reaches your phone — wherever you are. A small way to check on her, often. leiko.health"
+    }
+  }
+}

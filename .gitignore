@@ -1,0 +1,24 @@
+# ── secrets — never commit ────────────────────────────────────────────────
+.env
+.env.*
+*.secret
+secrets/
+CONTENT_INGEST_SECRET*
+
+# ── render output & scratch ───────────────────────────────────────────────
+out_*/
+_filled.html
+fonts/
+
+# ── send log: contains card ids and paths, regenerate locally ─────────────
+ingest_log.jsonl
+
+# ── python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ── os noise ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

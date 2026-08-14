@@ -100,5 +100,40 @@ Leiko to its producer. [inferred: that pairing was the main exposure risk.]
 - Content machine: founder film + carousel through needs_review once the
   shoot happens; education advertorial copy on request.
 
-**Stopping here per instructions — Phase 2 does not start until the founder
-reviews this report.**
+---
+
+# Phase 2 — executed 2026-08-14 (founder approved; wording signed off; cohort = 20)
+
+Same branch (`claude/phase01-brand-safety`), 10 more commits, full build
+passes, pushed. All **[confirmed]** unless marked.
+
+| Commit | What |
+|---|---|
+| `4035804` | **Quality page live** — founder signed off on the wording; noindex removed, footer link added. |
+| `639ee22` | **Cohort corrected to 20 and the public count is now live and honest.** Found and fixed while wiring it: bank-transfer sales marked paid on leads never wrote an orders row, so `/api/inventory` would not have decremented for WhatsApp sales — it now counts both. The hand-set constant is gone entirely. |
+| `4cae0b4` | **Hero: "Blood pressure, measured — not guessed."** — caregiving warmth moved to the support line; Nav's primary CTA now goes to `/reserve` (was `/preorder`). |
+| `fd63e34` | **`/` and `/preorder` instrumented** (ViewContent + custom view, same dedupe pattern as `/go/*`). **No paid spend until this deploys.** |
+| `514a146` | **Delivery + payment answered where the money moves** — four new `/preorder` FAQs (delivery, payment, sizing, battery), a good-to-know block beside the `/reserve` form, delivery promise on the address field. All sourced from the WhatsApp concierge's ground-truth facts; bank details deliberately stay off the site. |
+| `fd41103` | **Abandoned-lead email** — one warm reminder ~24h after step-1 without payment, both doors, explicitly "the only reminder I'll send". Send-once via `leads.reminded_at` (**migration `0048_lead_reminder.sql` — needs applying**; the job no-ops until then; 72h cap prevents back-mailing old leads). |
+| `2108b91` | **Proposals §4 answered: `GET /api/content/questions` built** — machine-auth'd, PII-free (text, timestamp, intent, market from lead country; never phone/name/lead id). The runbook's promised `whatsapp_questions` view never existed in this repo's migrations, so the feed reads the real `wa_messages` table. This repo's Step 0 can read it from next Sunday. |
+| `35ec7a7` | **Proposals §1 answered: draft-tier art can never publish.** Both publish paths now check the asset's recorded model and park draft renders as needs_review. This deliberately overrules the code's old "a worse picture beats no picture" policy per the imagery decision. |
+
+## Deploy checklist (founder / website agent)
+
+1. Merge `claude/phase01-brand-safety` (fast-forward from the flywheel head)
+   and deploy (`npm run build && npx wrangler deploy`).
+2. Apply migration `0048_lead_reminder.sql` (additive, one column) the same
+   way 0044/0045 were applied.
+3. Sanity-check after deploy: `/api/inventory` should return
+   `{remaining: 20, total: 20}` (live probe before the change showed
+   `sold: 0`); `/quality` reachable from the footer; a test hit of
+   `/api/content/questions` with the ingest secret.
+4. Then instrumentation is live and paid spend is unblocked per the plan.
+
+## Still with the founder (unchanged)
+
+Masters re-export (D7) · secret rotation (D8) · **the founder video** —
+now the critical path for the rest of Phase 2 (film + carousel publish via
+needs_review, then the About-page rewrite drawn from the script) · SKU rename
+(website agent, legacy-alias spec in proposals §7) · Leiko Plus currency ·
+D3/D2 voiceLint encoding (website agent).

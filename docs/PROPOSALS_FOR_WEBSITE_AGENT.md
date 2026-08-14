@@ -119,3 +119,36 @@ feed MYTH/FACT_HEAD candidates with a source tag.
 - The one-line RLS fix on `audit_log_default` (carried in this repo's README
   open items) is website-side Supabase work — taking it off this repo's list
   and handing it to you.
+
+## 7. Addendum 2026-08-14 — full site brand + funnel review
+
+`BRAND_REVIEW_2026-08.md` (same folder) contains a file:line review of the
+whole website against the Brand Building Playbook. The website-side work it
+identifies, in priority order:
+
+1. **Regulatory-language sweep, site-wide** — pending the founder + counsel
+   decision (§1 of the review). Footer, `/`, `/science` (+ meta description),
+   `/preorder` (+ FAQ), `/partners`, `/inside`, `/terms`, `/founder`
+   ("certified" ×3), `PresellSections.tsx` trust badges, and the dormant
+   badge template comment. Also update `src/operator/charter.ts:45-48`,
+   which still teaches the pre-ban rule.
+2. Reading-interpretation copy → pattern-vs-baseline language (preorder:169,
+   index FAQ mock, inside thresholds + classification column, partners:98,
+   app.tsx:68, the repeated "in pattern" verdict blocks).
+3. Scarcity: `FOUNDER_REMAINING` hand-edited constant rendered as live stock,
+   "of 30" vs "20" inconsistency.
+4. Step-1 email says "reserved" pre-payment and never sends the promised
+   `/reserve/complete` link; add abandoned-lead recovery email.
+5. Delivery terms on `/reserve` + `/reserve/complete` (they exist only in
+   `wa/facts.ts:45` today); FAQ gaps (sizing, battery, delivery, payment) +
+   FAQ presence on `/reserve`.
+6. Homepage/funnel coherence (USD homepage → naira-only checkout dead end);
+   instrument `/` and `/preorder`; WhatsApp-door standard event.
+7. Gifting bundle + post-purchase second-unit offer; comparison table;
+   education advertorial page (this repo supplies linted copy on request).
+8. Drip promises with no on-site backing (`templates.ts:55-57`); `/partners`
+   referral program described but unimplemented (USD, against naira).
+9. Hygiene: **`.env.production` is git-tracked and not ignored — audit,
+   rotate, purge history, ignore `.env*`**; confirm RLS behind the hardcoded
+   publishable key in `src/lib/supabase.ts`; minor: hero SVG hydration
+   shift, unwrapped table in `inside.tsx:152`, dead `ui/sidebar.tsx`.

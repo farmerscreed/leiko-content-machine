@@ -30,6 +30,7 @@ docs/COPY_RULES.md         canonical rulebook (v4) — also governs WhatsApp age
 docs/INGEST_SETUP.md       send setup, result codes, failure modes
 docs/README_v3.md          the Sunday workflow incl. idea-mining + scoreboard
 docs/AUDIT_2026-08.md      the 2026-08 audit: findings, keep/fix/kill table
+docs/BRAND_REVIEW_2026-08.md          website+funnel review vs the playbook
 docs/PROPOSALS_FOR_WEBSITE_AGENT.md   cross-repo asks; nothing changed unilaterally
 ```
 

@@ -22,3 +22,8 @@ venv/
 # ── os noise ──────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+
+# ── supplier-confidential: certificates & manufacturer documents ──────────
+# These identify the manufacturer. They live in a private drive, never in git.
+CERTS/
+certs/

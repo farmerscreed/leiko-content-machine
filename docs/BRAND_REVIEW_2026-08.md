@@ -12,6 +12,12 @@ changes nothing on the site.
 
 ## 1. The one decision above everything: regulatory language on the website
 
+> **SUPERSEDED 2026-08-14 by `FOUNDER_DECISIONS_2026-08.md` D1/D2** — decision
+> made: credentials verified genuine; strip site-wide; one Quality page with
+> protected, counsel-blessed wording; identifiers never published anywhere.
+> The section below stands as the record of what was found and why it
+> mattered.
+
 **The standing rule** — COPY_RULES v4 §4, voiceLint, this repo's CLAUDE.md,
 and the playbook itself (§3.1 and Appendix E's Never List) — says regulatory
 terms appear in **no public copy, no channel, no exceptions**.

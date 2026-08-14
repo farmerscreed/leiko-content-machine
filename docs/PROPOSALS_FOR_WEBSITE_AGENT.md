@@ -126,12 +126,22 @@ feed MYTH/FACT_HEAD candidates with a source tag.
 whole website against the Brand Building Playbook. The website-side work it
 identifies, in priority order:
 
-1. **Regulatory-language sweep, site-wide** — pending the founder + counsel
-   decision (§1 of the review). Footer, `/`, `/science` (+ meta description),
-   `/preorder` (+ FAQ), `/partners`, `/inside`, `/terms`, `/founder`
-   ("certified" ×3), `PresellSections.tsx` trust badges, and the dormant
-   badge template comment. Also update `src/operator/charter.ts:45-48`,
-   which still teaches the pre-ban rule.
+1. **Regulatory-language sweep, site-wide — now EXECUTABLE per
+   `FOUNDER_DECISIONS_2026-08.md` D1/D2** (the `/go/*` badge strip is
+   immediate; the rest post-counsel wording sign-off). Footer, `/`,
+   `/science` (+ meta description), `/preorder` (+ FAQ), `/partners`,
+   `/inside`, `/terms`, `/founder` ("certified" ×3), `PresellSections.tsx`
+   trust badges, and the dormant badge template comment. Also update
+   `src/operator/charter.ts:45-48`, which still teaches the pre-ban rule.
+   **Add:** build the one Quality page from the D2 draft (post-counsel),
+   footer-linked; never identifiers, never certificate images.
+   **Add (D2):** sweep the companion app + app-store listing for supplier
+   branding leaks; rebrand where possible.
+   **Add (D2/D3, voiceLint negotiation):** encode in voiceLint — (a) the
+   supplier-identifier ban (manufacturer name, model codes, K number,
+   certificate numbers) as hard blocks; (b) a narrow recorded exception for
+   "patient(s)" on clinician-facing B2B surfaces only. Once voiceLint carries
+   both, this repo mirrors them into COPY_RULES — never forked ahead of you.
 2. Reading-interpretation copy → pattern-vs-baseline language (preorder:169,
    index FAQ mock, inside thresholds + classification column, partners:98,
    app.tsx:68, the repeated "in pattern" verdict blocks).

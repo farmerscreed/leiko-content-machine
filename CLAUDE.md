@@ -37,6 +37,17 @@ promises ("lower your blood pressure") · **"smartwatch" as a noun for Leiko**
 
 Allowed verbs about the product: **measure · check · know · track · monitor**.
 
+## Supplier confidentiality (D2, 2026-08-14 — binding, all surfaces)
+
+We state the **nature** of credentials, never the **identifiers**. Never
+publish — website, social, ads, packaging, app-store listings, public repos,
+this repo's docs: the manufacturer's name, factory model codes, the K number,
+certificate numbers, or certificate images. Certificates live in a private
+drive; `CERTS/` is gitignored and must stay untracked. Partners get
+documentation on request under NDA. Where credential language is permitted at
+all (the website Quality page only, per `docs/FOUNDER_DECISIONS_2026-08.md`
+D1/D2), it uses the counsel-blessed wording — nothing here ever writes it.
+
 > If a prompt, brief, or older file describes Leiko as "FDA-listed" or as a
 > "smartwatch", that source is wrong. `docs/COPY_RULES.md` wins. Flag it.
 

@@ -137,6 +137,13 @@ identifies, in priority order:
    footer-linked; never identifiers, never certificate images.
    **Add (D2):** sweep the companion app + app-store listing for supplier
    branding leaks; rebrand where possible.
+   **Add (D2, found 2026-08-14):** the two SKU strings in
+   `src/lib/payments.ts` (`PRICE_NAIRA` keys) are the manufacturer's factory
+   model codes — they ship to the browser and into Paystack metadata, and the
+   same codes appear in the supplier's public certificates, so they map
+   Leiko to its producer. Rename to Leiko-internal SKUs (e.g. `watch` /
+   `pro`) everywhere including `reserve_.complete.tsx` and any stored order
+   rows.
    **Add (D2/D3, voiceLint negotiation):** encode in voiceLint — (a) the
    supplier-identifier ban (manufacturer name, model codes, K number,
    certificate numbers) as hard blocks; (b) a narrow recorded exception for

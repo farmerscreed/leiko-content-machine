@@ -118,17 +118,24 @@ passes, pushed. All **[confirmed]** unless marked.
 | `2108b91` | **Proposals §4 answered: `GET /api/content/questions` built** — machine-auth'd, PII-free (text, timestamp, intent, market from lead country; never phone/name/lead id). The runbook's promised `whatsapp_questions` view never existed in this repo's migrations, so the feed reads the real `wa_messages` table. This repo's Step 0 can read it from next Sunday. |
 | `35ec7a7` | **Proposals §1 answered: draft-tier art can never publish.** Both publish paths now check the asset's recorded model and park draft renders as needs_review. This deliberately overrules the code's old "a worse picture beats no picture" policy per the imagery decision. |
 
-## Deploy checklist (founder / website agent)
+## Deploy — DONE 2026-08-14 (founder-requested), all checks verified live
 
-1. Merge `claude/phase01-brand-safety` (fast-forward from the flywheel head)
-   and deploy (`npm run build && npx wrangler deploy`).
-2. Apply migration `0048_lead_reminder.sql` (additive, one column) the same
-   way 0044/0045 were applied.
-3. Sanity-check after deploy: `/api/inventory` should return
-   `{remaining: 20, total: 20}` (live probe before the change showed
-   `sold: 0`); `/quality` reachable from the footer; a test hit of
-   `/api/content/questions` with the ingest secret.
-4. Then instrumentation is live and paid spend is unblocked per the plan.
+1. **Merged**: `claude/phase01-brand-safety` → `main` (merge commit `c6429d5`;
+   main had 4 newer join-page commits, auto-merged cleanly, full build
+   passed). Work branch deleted from origin. Runbook doc adopted into
+   `leiko/docs/` (D6 move completed).
+2. **Deployed** via wrangler (version `4fca0f98`, hourly cron intact).
+3. **Migration `0048_lead_reminder.sql` applied to leiko-prod** via the
+   Supabase management API and verified (`leads.reminded_at` exists) — the
+   abandoned-lead reminder is armed.
+4. **Live checks, all passed**: homepage serves the new hero with zero
+   credential terms · `/quality` 200 and footer-linked · `/api/inventory` →
+   `{remaining: 20, total: 20, sold: 0}` · `/api/content/questions` → 401
+   without the machine secret.
+5. **Paid spend is now unblocked** per the plan (instrumentation live).
+6. Cross-session continuity: `leiko/docs/SESSION-HANDOFF-2026-08-14.md`
+   carries the deployed state, standing rules, and the queued work for the
+   website agent.
 
 ## Still with the founder (unchanged)
 

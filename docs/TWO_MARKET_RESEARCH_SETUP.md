@@ -78,8 +78,10 @@ Important: compute averages PER MARKET — US and NG numbers are not comparable.
   penetration in the US is low. Note this as a phase-2 item.
 
 ## 5. Build checklist
-[ ] Add market tag to idea_shortlists format and performance_log.md
-[ ] Add the NG / US / DIASPORA search lists to the Sunday task prompt
+[x] Add market tag to idea_shortlists format and performance_log.md
+    (performance_log.md ships with market AND surface columns, 2026-08-14)
+[x] Add the NG / US / DIASPORA search lists to the Sunday task prompt
+    (the Sunday prompt now exists: docs/WORKFLOW_PROMPTS.md §A, 2026-08-15)
 [ ] Add Meta Ad Library competitor check to the Sunday task
 [ ] Agree analytics access route (a, b, or c above) with the owner
 [ ] Create copy_issueN_us.json variant path in the run instructions

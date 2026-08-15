@@ -29,6 +29,9 @@ copy/copy_issueN.json      the only file that changes each week
 docs/COPY_RULES.md         canonical rulebook (v4) — also governs WhatsApp agent
 docs/INGEST_SETUP.md       send setup, result codes, failure modes
 docs/README_v3.md          the Sunday workflow incl. idea-mining + scoreboard
+docs/CONTENT_ARCHITECTURE.md          how the cards and the website flywheel fit
+docs/DESIGN_PROMPTS.md                prompts for Nano Banana 2 + Claude (templates, art)
+docs/WORKFLOW_PROMPTS.md              the Sunday run, writing an issue, creator brief
 docs/AUDIT_2026-08.md      the 2026-08 audit: findings, keep/fix/kill table
 docs/BRAND_REVIEW_2026-08.md          website+funnel review vs the playbook
 docs/PROPOSALS_FOR_WEBSITE_AGENT.md   cross-repo asks; nothing changed unilaterally

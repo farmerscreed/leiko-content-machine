@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "market": "NG",
+    "issue_no": 4,
+    "origin": "content-machine",
+    "note": "Angle: measured-vs-guessed (playbook Pillar 3) — 1b busts 'you can't measure BP from the wrist'; 1a anchors the 30-79 prevalence with the exact WHO portal figure (36%); 1c is Papa (alternation: Mama 1, Papa 2, Mama 3 -> Papa 4). Captions open with a situation per D-C5. Source re-verified 2026-08-16 on the WHO NCD portal; issue 3's stored 47% did NOT match and was not reused."
+  },
+
+  "slots": {
+    "STAT_A": "1",
+    "STAT_MID": "in",
+    "STAT_B": "3",
+    "STAT_SUB": "Nigerian adults aged 30–79 has&nbsp;hypertension.",
+    "STAT_KICK": "Know your number.",
+    "MYTH": "“You can't measure BP from&nbsp;the&nbsp;wrist.”",
+    "FACT_HEAD": "A real cuff can.",
+    "FACT_SUB": "Same method as the doctor's cuff — on your&nbsp;wrist.",
+    "GIFT_HEAD1": "Check on",
+    "GIFT_HEAD2": "Papa",
+    "GIFT_BODY": "One press. His number on your phone — before he says “I'm&nbsp;fine.”"
+  },
+
+  "cards": {
+    "1a": {
+      "pillar": "educate",
+      "title": "1 in 3, aged 30–79",
+      "claims_a_stat": true,
+      "caption": "Most of us first hear about our blood pressure by accident — a clinic visit for something else, a pharmacy stop, a work check-up. It is common: about 1 in 3 Nigerian adults aged 30 to 79 (36%) has hypertension, and there is usually nothing to feel. Thirty seconds on the wrist is how you check on purpose. leiko.health",
+      "sources": [
+        {
+          "body": "WHO",
+          "name": "WHO NCD Data Portal — Nigeria country profile",
+          "url": "https://ncdportal.org/CountryProfile/GHE2019/NGA",
+          "figure": "Quoted label, retrieved 2026-08-16: \"Prevalence of hypertension among adults aged 30–79 years (age-standardized estimate) (%)\" = 36%. Also on the page: raised blood pressure (SBP>=140 or DBP>=90), adults 30-79 = 32%.",
+          "retrieved": "2026-08-16",
+          "status": "verified"
+        }
+      ]
+    },
+
+    "1b": {
+      "pillar": "product",
+      "title": "You can't measure BP from the wrist",
+      "claims_a_stat": false,
+      "caption": "Somebody has probably told you a wrist device is just guessing. Many are — they estimate from a light sensor. Leiko is different: a real cuff inflates on your wrist, holds, and measures — the same method as the cuff in a clinic. leiko.health"
+    },
+
+    "1c": {
+      "pillar": "caregiver",
+      "title": "Check on Papa",
+      "claims_a_stat": false,
+      "caption": "Every Sunday you ask Papa how he is, and every Sunday he says he is fine. One press on his wrist shows you the number behind “I'm fine” — wherever you are. A small way to check on him, often. leiko.health"
+    }
+  }
+}

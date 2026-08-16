@@ -158,6 +158,20 @@ Three things worth knowing:
    publisher refuses a `.png` path outright. This closes `CONTENT-AUTOPUBLISH.md` §3
    on this side.
 
+## What changed on the website side — 2026-08-16
+
+1. **The flywheel's image-model renderer is DELETED.** This repo's locked
+   template is now the only renderer for cards and carousels
+   (`docs/CONTENT_ARCHITECTURE.md` addendum). A render bridge (site lists
+   pending renders → a local runner renders here, lints, sends via ingest) is
+   planned but not built.
+2. **The site now enforces sourcing at publish** (v1 of the stat rule
+   server-side): a statistic without a verified, under-180-day citation is
+   blocked. This repo's linter remains the stricter, canonical rule set.
+3. **First post ever published** (2026-08-16, a Facebook text post). Facebook
+   publishing works; the cockpit gained a "Publish what's due now" button.
+   The ingest contract remains UNCHANGED.
+
 ## Working agreements
 
 - Distinguish **confirmed** from **inferred**. Say which is which. Do not paper

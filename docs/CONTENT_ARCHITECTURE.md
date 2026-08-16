@@ -95,6 +95,26 @@ different format label. That fixes the imagery-quality complaint at its source
 instead of policing it at publish time — the publish-time tier gate
 (`draftArtBlock`) is a backstop, not a strategy.
 
+## Addendum 2026-08-16 — the duplication is gone
+
+Executed per the website repo's `CONTENT-ARCHITECTURE-REVIEW.md`:
+
+- **The flywheel's image-model renderer is deleted** (`artwork.ts` +
+  `carousel.ts`, ~806 lines, plus the reel-still generation hook). The locked
+  template in THIS repo is now the only renderer for cards and carousels. The
+  publish-time gates (`draftArtBlock`, `isReviewable`) survive in `content.ts`.
+- **Convergence item 3 (the stat rule server-side) is done, v1.** The atomizer
+  emits sources copied from idea evidence only; the worker opens every link
+  (`verifySources`) and stamps `retrieved`/`status` itself; `sourceGate` blocks
+  any statistic without a verified fresh citation at publish — mirroring this
+  repo's linter at the boundary without forking the full rule set.
+- **The live risk above (both systems filing `format='card'`) is defused** for
+  now: only this repo produces finished card images.
+- Still open: the render bridge (worker exposes pending renders; a local runner
+  renders on the locked template, lints with `leiko_lint.py`, pushes via
+  ingest), and new locked templates for carousels/feed cards with the visible
+  source slot.
+
 ## In one line
 
 **The cards are the format. The flywheel is the volume and the distribution.

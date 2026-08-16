@@ -85,7 +85,13 @@ def post(card, attempts=2):
         req = urllib.request.Request(
             ENDPOINT, data=data,
             headers={"Content-Type": "application/json",
-                     "Authorization": f"Bearer {SECRET}"}, method="POST")
+                     "Authorization": f"Bearer {SECRET}",
+                     # urllib's default "Python-urllib/3.x" UA trips Cloudflare's
+                     # browser-integrity check (edge 403, error 1010) and the
+                     # request never reaches the worker — found 2026-08-16 when
+                     # all of issue 4 bounced. Identify honestly instead.
+                     "User-Agent": "leiko-content-machine/3 (+https://leiko.health)"},
+            method="POST")
         try:
             with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
                 return r.status, json.loads(r.read().decode())
@@ -137,6 +143,9 @@ def explain(code):
                  "or whether the site is up. Nothing was sent, so nothing is half-done.",
             400: "bad JSON, empty batch, or more than 50 cards",
             401: "bad or missing CONTENT_INGEST_SECRET",
+            403: "blocked at the Cloudflare edge BEFORE the worker (a raw body "
+                 "like 'error code: 1010' is the browser-integrity/bot check). "
+                 "The request never arrived; nothing is half-stored.",
             503: "secret not configured on the worker — tell the site owner"}.get(code)
 
 
@@ -239,6 +248,11 @@ def main(copy_path, outdir, dry=False):
             print(f"                {str(f)[:160]}")
         if r.get("error"):
             print(f"          error: {r['error']}")
+        if r.get("raw"):
+            # A non-JSON body means something answered that was not the worker
+            # (usually the Cloudflare edge). Hiding it cost a debugging round
+            # on 2026-08-16 — always show what actually came back.
+            print(f"          raw response (HTTP {code}): {str(r['raw'])[:200]}")
 
         log.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
                               "issue_no": c["issue_no"], "market": c["market"],

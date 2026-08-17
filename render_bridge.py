@@ -66,12 +66,15 @@ def api(path, payload=None):
 
 
 def pick_quote(item):
-    """The line that goes ON the card: the hook, else the script's opening.
+    """The line that goes ON the card: hook, else script, else the Facebook
+    caption — for a text post the caption often IS the post, and the first
+    bridge run (2026-08-17) drew two blank cards by not looking there.
 
     Cut at a sentence boundary under MAX_QUOTE_CHARS — an ellipsis mid-thought
     reads as sloppy on a card that exists to look considered.
     """
-    text = (item.get("hook") or item.get("script") or "").strip()
+    captions = item.get("captions") or {}
+    text = (item.get("hook") or item.get("script") or captions.get("facebook") or "").strip()
     if len(text) <= MAX_QUOTE_CHARS:
         return text
     best = ""
@@ -124,6 +127,11 @@ def main(dry=False):
     for it in items:
         pid = it["id"]
         quote = pick_quote(it)
+        if not quote:
+            # A blank card must never exist — better no image than an empty one.
+            print(f"  SKIP  {pid[:8]}  post has no text anywhere (hook/script/caption)")
+            bad += 1
+            continue
         kick = KICK.get(it.get("pillar") or "", "WORTH KNOWING")
 
         # Belt-and-braces: the copy was voiceLint'ed server-side at insert, but

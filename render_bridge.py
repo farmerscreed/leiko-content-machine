@@ -26,6 +26,18 @@ from leiko_lint import scan, scan_cuffless, utf8_stdout
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = os.environ.get("LEIKO_SITE", "https://leiko.health").rstrip("/")
 SECRET = os.environ.get("CONTENT_INGEST_SECRET", "")
+if not SECRET and os.name == "nt":
+    # The scheduled task inherits a stale session environment (Windows only
+    # refreshes it at login), so read the persistent User variable straight
+    # from its registry home. Same store the founder's one-time
+    # SetEnvironmentVariable(..., 'User') wrote to — still no file, no repo.
+    try:
+        import winreg
+
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as _k:
+            SECRET = winreg.QueryValueEx(_k, "CONTENT_INGEST_SECRET")[0]
+    except OSError:
+        pass
 UA = "leiko-content-machine/3 (+https://leiko.health)"  # urllib's default UA is
 # blocked by the Cloudflare browser-integrity check (403, error 1010)
 OUT = HERE / "out_bridge"
@@ -119,7 +131,9 @@ def main(dry=False):
         sys.exit(f"render-queue failed: HTTP {code} {json.dumps(body)[:300]}")
     items = body.get("items", [])
     if not items:
-        print("Nothing waiting for a card. ✨")
+        # Plain ASCII: this line mostly lives in bridge_log.txt via cmd.exe,
+        # whose codepage mangles emoji.
+        print("Nothing waiting for a card.")
         return 0
 
     print(f"{len(items)} story post(s) need a card\n")

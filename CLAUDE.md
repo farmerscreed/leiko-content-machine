@@ -111,6 +111,20 @@ python generate_v3.py   copy/copy_issue3.json out_issue3/     # make the picture
 python leiko_ingest.py  copy/copy_issue3.json out_issue3/     # send them (needs secret)
 ```
 
+## The render bridge (2026-08-17)
+
+The website's flywheel writes story TEXT posts but cannot rasterise. This repo
+closes the loop: `python render_bridge.py` (needs the same secret) polls
+`GET /api/content/render-queue`, renders each story's opening line on the
+LOCKED quote template (`leiko_template_quote.html` — pure CSS, the file IS the
+master, only `{{QUOTE_KICK}}`/`{{QUOTE_TEXT}}` change), and pushes the card
+back via `POST /api/content/render-result`. The site sniffs the bytes, stores
+to the private bucket, runs the vision gate, sets `image_path` — and its
+Facebook publisher then ships the post as photo + caption. Re-running is
+always safe: the queue only lists imageless posts. Local copies land in
+`out_bridge/` for eyeballing. Run it whenever drafts are reviewed, or before
+approving.
+
 (`python`, not `python3` — Windows has no `python3` alias.) `--dry-run` on the
 last one shows the payload without sending. `python selfcheck.py` proves the
 linter still blocks every category of bad card — run it after any change here.

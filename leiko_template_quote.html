@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+/* LEIKO QUOTE CARD — LOCKED (2026-08-17).
+   The typographic frame for flywheel story posts: the story's opening line in
+   the brand's editorial voice. Same design system as leiko_template_v2.html
+   (navy #0A1E3C · coral #FF6B5B · cream #F6F1E7 · Archivo/Instrument
+   Serif/Space Grotesk). Pure CSS — no master PNG; this file IS the master.
+   Only the two token slots change per render: {{QUOTE_KICK}} {{QUOTE_TEXT}}.
+   Rendered by render_bridge.py at 1080x1350, device_scale_factor 2. */
+@font-face { font-family:'Archivo'; src:url('fonts/Archivo.ttf'); font-weight:100 900; }
+@font-face { font-family:'Space Grotesk'; src:url('fonts/SpaceGrotesk.ttf'); font-weight:300 700; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Regular.ttf'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Italic.ttf'); font-weight:400; font-style:italic; }
+body { margin:0; background:#111; }
+</style></head><body>
+<div data-screen-label="quote" style="width:1080px; height:1350px; position:relative; overflow:hidden; isolation:isolate; background:#F6F1E7; background-image:radial-gradient(ellipse 120% 90% at 20% 0%, #FBF7EF 0%, #F6F1E7 55%, #EFE8DA 100%);">
+
+  <!-- top bar — identical geometry to the 1a stat card -->
+  <div style="position:absolute; top:0; left:0; right:0; height:150px; display:flex; align-items:center; justify-content:space-between; padding:0 72px; box-sizing:border-box;">
+    <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:30px; letter-spacing:.34em; color:#0A1E3C;">LEIKO</span>
+    <span style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:19px; letter-spacing:.2em; color:#FF6B5B;">{{QUOTE_KICK}}</span>
+  </div>
+
+  <!-- the quote block: oversized coral quote mark, then the story line in
+       Instrument Serif navy. The fit script shrinks the type until the text
+       sits inside its box — a long line renders smaller, never clipped. -->
+  <div style="position:absolute; top:210px; left:72px; right:110px; bottom:330px;">
+    <div style="font-family:'Instrument Serif',serif; font-size:230px; line-height:.55; color:#FF6B5B; height:120px; user-select:none;">&ldquo;</div>
+    <div id="quote" style="font-family:'Instrument Serif',serif; font-size:84px; line-height:1.14; color:#0A1E3C; text-wrap:pretty; max-width:880px;">{{QUOTE_TEXT}}</div>
+  </div>
+
+  <!-- coral rule + footer — identical to the 1a stat card's base -->
+  <div style="position:absolute; left:72px; bottom:210px; width:210px; height:12px; background:#FF6B5B;"></div>
+  <div style="position:absolute; left:72px; bottom:64px; right:72px; display:flex; align-items:flex-end; justify-content:space-between;">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; letter-spacing:.16em; color:#0A1E3C; white-space:nowrap;">THE FULL STORY IS IN THE CAPTION</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#0A1E3C; opacity:.6;">leiko.health</span>
+    </div>
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:19px; letter-spacing:.2em; color:#0A1E3C; opacity:.45;">MEASURED, NOT GUESSED</span>
+  </div>
+
+  <script>
+    // Fit the quote to its box: shrink from 84px down to 52px before giving up.
+    // Runs before the renderer's screenshot wait, so the shot sees the final size.
+    (function () {
+      var q = document.getElementById("quote");
+      var box = q.parentElement;
+      var size = 84;
+      while (size > 52 && q.getBoundingClientRect().bottom > box.getBoundingClientRect().bottom) {
+        size -= 2;
+        q.style.fontSize = size + "px";
+      }
+    })();
+  </script>
+</div>
+</body></html>

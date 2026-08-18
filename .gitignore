@@ -8,7 +8,7 @@ CONTENT_INGEST_SECRET*
 # ── render output & scratch ───────────────────────────────────────────────
 out_*/
 _filled.html
-_filled_quote.html
+_filled_*.html
 fonts/
 bridge_log.txt
 

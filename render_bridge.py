@@ -57,6 +57,22 @@ KICK = {
 
 MAX_QUOTE_CHARS = 220
 
+# The locked carousel routes — the founder's three design routes (2026-08-18),
+# hardened from claude.ai/design "LEIKO Carousel Design Routes". Rotation is
+# DETERMINISTIC by post id: the same post always renders the same route (safe
+# to re-run), and the feed alternates looks without ever leaving the one
+# visual family — variants within the system, never a second identity.
+# (leiko_template_carousel.html, the original family, is kept as a fallback.)
+CAROUSEL_ROUTES = [
+    "leiko_template_carousel_r1.html",  # editorial numeral
+    "leiko_template_carousel_r2.html",  # hard asymmetric split
+    "leiko_template_carousel_r3.html",  # single object, brutal air
+]
+
+
+def route_for(post_id):
+    return CAROUSEL_ROUTES[int(post_id.replace("-", ""), 16) % len(CAROUSEL_ROUTES)]
+
 
 def api(path, payload=None):
     """One authenticated call. Returns (status, parsed-or-raw)."""
@@ -203,13 +219,14 @@ def main(dry=False):
                     bad += 1
                     continue
                 src = source_line(it)
+                route = route_for(pid)
                 payload = []
                 for i in range(n):
                     label, tokens = carousel_tokens(slides, i, n, src)
                     png, jpg = OUT / f"{pid}-s{i}.png", OUT / f"{pid}-s{i}.jpg"
-                    shoot(fill("leiko_template_carousel.html", tokens), label, png, jpg)
+                    shoot(fill(route, tokens), label, png, jpg)
                     payload.append({"index": i, "image_base64": base64.b64encode(jpg.read_bytes()).decode()})
-                print(f"  drew  {pid[:8]}  carousel, {n} slides")
+                print(f"  drew  {pid[:8]}  carousel, {n} slides ({route})")
                 if dry:
                     continue
                 code, res = api("/api/content/render-result", {"post_id": pid, "slides": payload})

@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+/* LEIKO CAROUSEL — ROUTE 3: SINGLE OBJECT, BRUTAL AIR — LOCKED (2026-08-18).
+   Founder-chosen variant (claude.ai/design "LEIKO Carousel Design Routes",
+   leiko_route3_object.html), production-hardened for the render bridge:
+   - IMAGE SLOT placeholders removed until real product photography exists
+     (the coral ground on the cover stays as pure geometry);
+   - the SOURCE plate hides itself when a carousel carries no citation.
+   Same tokens, palette and type as leiko_template_carousel.html — this is a
+   VARIANT within the locked family, rotated deterministically by the bridge.
+   navy #0A1E3C · coral #FF6B5B · cream #F6F1E7. */
+@font-face { font-family:'Archivo'; src:url('fonts/Archivo.ttf'); font-weight:100 900; }
+@font-face { font-family:'Space Grotesk'; src:url('fonts/SpaceGrotesk.ttf'); font-weight:300 700; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Regular.ttf'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Italic.ttf'); font-weight:400; font-style:italic; }
+body { margin:0; background:#111; }
+.slide { width:1080px; height:1350px; position:relative; overflow:hidden; isolation:isolate; }
+.wordmark { font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; letter-spacing:.36em; }
+.counter { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:21px; letter-spacing:.16em; }
+.eyebrow { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; letter-spacing:.26em; }
+</style></head><body>
+
+<!-- ── COVER: cream field, almost all of it empty. One coral object anchored
+     bottom-right, cut by the trims — the silence is the luxury signal. ── -->
+<div class="slide" data-screen-label="cover" style="background:#F6F1E7;">
+  <div style="position:absolute; left:88px; top:96px; right:88px; display:flex; align-items:center; justify-content:space-between;">
+    <span class="wordmark" style="color:#0A1E3C;">LEIKO</span>
+    <span class="counter" style="color:#0A1E3C; opacity:.5;">{{COVER_COUNT}}</span>
+  </div>
+
+  <div style="position:absolute; left:88px; top:300px; width:770px;">
+    <div id="coverhead" style="font-family:'Instrument Serif',serif; font-size:132px; line-height:.98; letter-spacing:-.015em; color:#0A1E3C; text-wrap:balance;">{{COVER_HEAD}}</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:33px; line-height:1.34; color:#0A1E3C; opacity:.72; margin-top:40px; max-width:560px; text-wrap:pretty;">{{COVER_SUB}}</div>
+  </div>
+
+  <!-- the single object: a coral square clipped by two trims. When real product
+       photography exists, it becomes the photo's ground. -->
+  <div style="position:absolute; right:-90px; bottom:-90px; width:660px; height:660px; background:#FF6B5B;"></div>
+
+  <div style="position:absolute; left:88px; bottom:70px; display:flex; align-items:baseline; gap:24px; z-index:4;">
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:21px; color:#0A1E3C; opacity:.55;">leiko.health</span>
+    <span class="eyebrow" style="color:#0A1E3C;">SWIPE&nbsp;&#8594;</span>
+  </div>
+  <script>
+    (function () {
+      var h = document.getElementById("coverhead"), s = 132;
+      while (s > 72 && h.getBoundingClientRect().height > 430) { s -= 4; h.style.fontSize = s + "px"; }
+    })();
+  </script>
+</div>
+
+<!-- ── BODY: navy void. The number IS the object, set alone; the sentence sits
+     low and narrow against a hairline. ── -->
+<div class="slide" data-screen-label="body" style="background:#0A1E3C;">
+  <div style="position:absolute; left:88px; top:96px; right:88px; display:flex; align-items:center; justify-content:space-between;">
+    <span class="wordmark" style="color:#F6F1E7;">LEIKO</span>
+    <span class="counter" style="color:#F6F1E7; opacity:.5;">{{BODY_COUNT}}</span>
+  </div>
+
+  <div style="position:absolute; left:84px; top:290px;">
+    <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:300px; line-height:.8; letter-spacing:-.055em; color:#FF6B5B; white-space:nowrap;">{{BODY_NUM}}</div>
+  </div>
+
+  <div style="position:absolute; left:88px; top:640px; width:800px;">
+    <div id="bodyhead" style="font-family:'Instrument Serif',serif; font-size:96px; line-height:1.02; letter-spacing:-.01em; color:#F6F1E7; text-wrap:balance;">{{BODY_HEAD}}</div>
+  </div>
+
+  <div style="position:absolute; left:88px; bottom:210px; width:600px;">
+    <div style="width:100%; height:1px; background:#F6F1E7; opacity:.3;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:33px; line-height:1.44; color:#F6F1E7; opacity:.8; margin-top:28px; text-wrap:pretty;">{{BODY_TEXT}}</div>
+  </div>
+
+  <div style="position:absolute; left:88px; bottom:70px; font-family:'Space Grotesk',sans-serif; font-size:21px; color:#F6F1E7; opacity:.5;">leiko.health</div>
+  <script>
+    (function () {
+      var h = document.getElementById("bodyhead"), s = 96;
+      while (s > 54 && h.getBoundingClientRect().height > 260) { s -= 4; h.style.fontSize = s + "px"; }
+    })();
+  </script>
+</div>
+
+<!-- ── CLOSE: cream. The citation is the object — a navy plate large enough to
+     read in a screenshot. Hides itself when there is no citation. ── -->
+<div class="slide" data-screen-label="close" style="background:#F6F1E7;">
+  <div style="position:absolute; left:88px; top:96px; right:88px; display:flex; align-items:center; justify-content:space-between;">
+    <span class="wordmark" style="color:#0A1E3C;">LEIKO</span>
+    <span class="counter" style="color:#0A1E3C; opacity:.5;">{{CLOSE_COUNT}}</span>
+  </div>
+
+  <div style="position:absolute; left:88px; top:280px; width:800px;">
+    <div id="closehead" style="font-family:'Instrument Serif',serif; font-size:118px; line-height:.99; letter-spacing:-.015em; color:#0A1E3C; text-wrap:balance;">{{CLOSE_HEAD}}</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:32px; line-height:1.36; color:#0A1E3C; opacity:.72; margin-top:36px; max-width:620px; text-wrap:pretty;">{{CLOSE_SUB}}</div>
+  </div>
+
+  <div id="srcplate" style="position:absolute; left:88px; right:-60px; bottom:200px; background:#0A1E3C; padding:44px 56px 48px; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; gap:18px;">
+      <span style="width:50px; height:8px; background:#FF6B5B;"></span>
+      <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:19px; letter-spacing:.32em; color:#FF6B5B;">SOURCE</span>
+    </div>
+    <div id="srctext" style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:31px; line-height:1.38; color:#F6F1E7; margin-top:24px; max-width:760px; text-wrap:pretty;">{{CLOSE_SRC}}</div>
+  </div>
+
+  <div style="position:absolute; left:88px; bottom:72px; right:88px; display:flex; align-items:center; gap:20px;">
+    <span class="wordmark" style="color:#0A1E3C;">LEIKO</span>
+    <span style="width:50px; height:2px; background:#FF6B5B;"></span>
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:21px; color:#0A1E3C; opacity:.6;">leiko.health</span>
+  </div>
+  <script>
+    (function () {
+      var h = document.getElementById("closehead"), s = 118;
+      while (s > 56 && h.getBoundingClientRect().height > 340) { s -= 4; h.style.fontSize = s + "px"; }
+      // An empty SOURCE plate would read as a mistake — a carousel with no
+      // sourced figure simply doesn't wear one (D-C4: no source, no claim).
+      var t = document.getElementById("srctext");
+      if (!t.textContent.trim()) document.getElementById("srcplate").style.display = "none";
+    })();
+  </script>
+</div>
+
+</body></html>

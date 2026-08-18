@@ -1,0 +1,126 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+/* LEIKO CAROUSEL — ROUTE 2: HARD ASYMMETRIC SPLIT — LOCKED (2026-08-18).
+   Founder-chosen variant (claude.ai/design "LEIKO Carousel Design Routes",
+   leiko_route2_split.html), production-hardened for the render bridge:
+   IMAGE SLOT placeholders removed until real product photography exists; the
+   full-bleed citation band hides itself when a carousel carries no citation
+   (a plain navy footer takes its place). Same tokens, palette and type as the
+   other routes — a VARIANT within the locked family, rotated deterministically.
+   navy #0A1E3C · coral #FF6B5B · cream #F6F1E7. */
+@font-face { font-family:'Archivo'; src:url('fonts/Archivo.ttf'); font-weight:100 900; }
+@font-face { font-family:'Space Grotesk'; src:url('fonts/SpaceGrotesk.ttf'); font-weight:300 700; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Regular.ttf'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Italic.ttf'); font-weight:400; font-style:italic; }
+body { margin:0; background:#111; }
+.slide { width:1080px; height:1350px; position:relative; overflow:hidden; isolation:isolate; }
+.wordmark { font-family:'Archivo',sans-serif; font-weight:900; font-size:26px; letter-spacing:.34em; }
+.counter { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:22px; letter-spacing:.14em; }
+</style></head><body>
+
+<!-- ── COVER: seam at 38% — coral field left, navy right. The headline starts
+     in the coral and exits the right trim; a clipped navy copy keeps the type
+     readable across the seam. ── -->
+<div class="slide" data-screen-label="cover" style="background:#0A1E3C;">
+  <div style="position:absolute; left:0; top:0; bottom:0; width:410px; background:#FF6B5B;"></div>
+
+  <span class="wordmark" style="position:absolute; left:56px; top:86px; color:#0A1E3C; z-index:4;">LEIKO</span>
+  <span class="counter" style="position:absolute; right:60px; top:88px; color:#F6F1E7; opacity:.55; z-index:4;">{{COVER_COUNT}}</span>
+
+  <div style="position:absolute; left:56px; top:280px; width:1180px; z-index:5;">
+    <div id="coverhead" style="font-family:'Instrument Serif',serif; font-size:150px; line-height:.94; letter-spacing:-.02em; color:#F6F1E7; text-wrap:balance;">{{COVER_HEAD}}</div>
+    <div aria-hidden="true" style="position:absolute; left:0; top:0; width:1180px; clip-path:inset(0 826px 0 0);">
+      <div id="coverhead2" style="font-family:'Instrument Serif',serif; font-size:150px; line-height:.94; letter-spacing:-.02em; color:#0A1E3C; text-wrap:balance;">{{COVER_HEAD}}</div>
+    </div>
+  </div>
+
+  <div style="position:absolute; right:60px; bottom:250px; width:520px; text-align:right; z-index:5;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:34px; line-height:1.32; color:#FF6B5B; text-wrap:pretty;">{{COVER_SUB}}</div>
+  </div>
+
+  <div style="position:absolute; right:60px; bottom:64px; display:flex; align-items:baseline; gap:26px; z-index:5;">
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#F6F1E7; opacity:.55;">leiko.health</span>
+    <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:25px; letter-spacing:.2em; color:#F6F1E7;">SWIPE&nbsp;&#8594;</span>
+  </div>
+  <script>
+    (function () {
+      var h = document.getElementById("coverhead"), h2 = document.getElementById("coverhead2"), s = 150;
+      while (s > 76 && h.getBoundingClientRect().height > 520) { s -= 5; h.style.fontSize = s + "px"; h2.style.fontSize = s + "px"; }
+    })();
+  </script>
+</div>
+
+<!-- ── BODY: horizontal seam at 62% — cream above, navy below. The numeral
+     straddles the seam, cropped by the right trim. ── -->
+<div class="slide" data-screen-label="body" style="background:#F6F1E7;">
+  <div style="position:absolute; left:0; right:0; bottom:0; height:512px; background:#0A1E3C;"></div>
+
+  <span class="wordmark" style="position:absolute; left:64px; top:86px; color:#0A1E3C;">LEIKO</span>
+  <span class="counter" style="position:absolute; right:64px; top:88px; color:#0A1E3C; opacity:.5;">{{BODY_COUNT}}</span>
+
+  <div style="position:absolute; right:-40px; top:590px; font-family:'Archivo',sans-serif; font-weight:900; font-size:370px; line-height:.74; letter-spacing:-.06em; color:#FF6B5B; white-space:nowrap; z-index:3;">{{BODY_NUM}}</div>
+
+  <div style="position:absolute; left:64px; top:240px; width:620px;">
+    <div id="bodyhead" style="font-family:'Instrument Serif',serif; font-size:100px; line-height:1.0; letter-spacing:-.01em; color:#0A1E3C; text-wrap:balance;">{{BODY_HEAD}}</div>
+  </div>
+
+  <div style="position:absolute; left:64px; bottom:200px; width:600px; z-index:4;">
+    <span style="display:block; width:150px; height:8px; background:#FF6B5B; margin-bottom:32px;"></span>
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:36px; line-height:1.42; color:#F6F1E7; opacity:.85; text-wrap:pretty;">{{BODY_TEXT}}</div>
+  </div>
+
+  <div style="position:absolute; right:64px; bottom:62px; font-family:'Space Grotesk',sans-serif; font-size:22px; color:#F6F1E7; opacity:.55; z-index:6;">leiko.health</div>
+  <script>
+    (function () {
+      var h = document.getElementById("bodyhead"), s = 100;
+      while (s > 56 && h.getBoundingClientRect().height > 300) { s -= 4; h.style.fontSize = s + "px"; }
+    })();
+  </script>
+</div>
+
+<!-- ── CLOSE: navy above, a full-bleed cream citation band below — the band is
+     the artefact you forward. With no citation, a plain navy footer instead. ── -->
+<div class="slide" data-screen-label="close" style="background:#0A1E3C;">
+  <span class="wordmark" style="position:absolute; left:64px; top:86px; color:#F6F1E7;">LEIKO</span>
+  <span class="counter" style="position:absolute; right:64px; top:88px; color:#F6F1E7; opacity:.55;">{{CLOSE_COUNT}}</span>
+
+  <div style="position:absolute; left:64px; top:250px; width:1050px;">
+    <div id="closehead" style="font-family:'Instrument Serif',serif; font-size:126px; line-height:.98; letter-spacing:-.02em; color:#F6F1E7; text-wrap:balance;">{{CLOSE_HEAD}}</div>
+  </div>
+
+  <div style="position:absolute; left:64px; top:700px; width:640px;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:34px; line-height:1.4; color:#F6F1E7; opacity:.75; text-wrap:pretty;">{{CLOSE_SUB}}</div>
+  </div>
+
+  <div id="srcband" style="position:absolute; left:0; right:0; bottom:0; height:430px; background:#F6F1E7; padding:52px 64px 0; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; gap:18px;">
+      <span style="width:54px; height:8px; background:#FF6B5B;"></span>
+      <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:19px; letter-spacing:.32em; color:#0A1E3C;">SOURCE</span>
+    </div>
+    <div id="srctext" style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:30px; line-height:1.38; color:#0A1E3C; margin-top:26px; max-width:900px; text-wrap:pretty;">{{CLOSE_SRC}}</div>
+    <div style="position:absolute; left:64px; right:64px; bottom:56px; display:flex; align-items:center; justify-content:space-between;">
+      <span class="wordmark" style="color:#0A1E3C;">LEIKO</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#0A1E3C; opacity:.65;">leiko.health</span>
+    </div>
+  </div>
+
+  <!-- shown only when there is no citation band -->
+  <div id="fallbackfooter" style="display:none; position:absolute; left:64px; bottom:62px; right:64px; align-items:center; gap:18px;">
+    <span class="wordmark" style="color:#F6F1E7;">LEIKO</span>
+    <span style="width:52px; height:2px; background:#FF6B5B;"></span>
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#F6F1E7; opacity:.6;">leiko.health</span>
+  </div>
+
+  <script>
+    (function () {
+      var h = document.getElementById("closehead"), s = 126;
+      while (s > 58 && h.getBoundingClientRect().height > 400) { s -= 4; h.style.fontSize = s + "px"; }
+      var t = document.getElementById("srctext");
+      if (!t.textContent.trim()) {
+        document.getElementById("srcband").style.display = "none";
+        document.getElementById("fallbackfooter").style.display = "flex";
+      }
+    })();
+  </script>
+</div>
+
+</body></html>

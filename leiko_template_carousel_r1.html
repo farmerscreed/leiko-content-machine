@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+/* LEIKO CAROUSEL — ROUTE 1: EDITORIAL NUMERAL SYSTEM — LOCKED (2026-08-18).
+   Founder-chosen variant (claude.ai/design "LEIKO Carousel Design Routes",
+   leiko_route1_numeral.html), production-hardened for the render bridge:
+   IMAGE SLOT placeholders removed until real product photography exists; the
+   SOURCE plate hides itself when a carousel carries no citation (D-C4: no
+   source, no plate). Same tokens, palette and type as the other routes —
+   a VARIANT within the locked family, rotated deterministically.
+   navy #0A1E3C · coral #FF6B5B · cream #F6F1E7. */
+@font-face { font-family:'Archivo'; src:url('fonts/Archivo.ttf'); font-weight:100 900; }
+@font-face { font-family:'Space Grotesk'; src:url('fonts/SpaceGrotesk.ttf'); font-weight:300 700; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Regular.ttf'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Instrument Serif'; src:url('fonts/InstrumentSerif-Italic.ttf'); font-weight:400; font-style:italic; }
+body { margin:0; background:#111; }
+.slide { width:1080px; height:1350px; position:relative; overflow:hidden; isolation:isolate; }
+.wordmark { font-family:'Archivo',sans-serif; font-weight:900; font-size:26px; letter-spacing:.34em; }
+.counter { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:22px; letter-spacing:.14em; }
+/* the numeral: always oversized, always bleeding out of one edge */
+.numeral { font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-.06em; line-height:.78; position:absolute; white-space:nowrap; }
+</style></head><body>
+
+<!-- ── COVER: the counter, blown to 560px, cropped by the left trim; the
+     headline hangs off its right flank. ── -->
+<div class="slide" data-screen-label="cover" style="background:#0A1E3C;">
+  <div class="numeral" style="left:-420px; top:470px; font-size:560px; color:#FF6B5B;">{{COVER_COUNT}}</div>
+
+  <div style="position:absolute; left:72px; top:88px; z-index:3;">
+    <span class="wordmark" style="color:#F6F1E7;">LEIKO</span>
+  </div>
+
+  <div style="position:absolute; left:330px; top:430px; right:76px; z-index:3;">
+    <div id="coverhead" style="font-family:'Instrument Serif',serif; font-size:136px; line-height:.96; letter-spacing:-.015em; color:#F6F1E7; text-wrap:balance;">{{COVER_HEAD}}</div>
+    <div style="width:100%; height:2px; background:#F6F1E7; opacity:.28; margin:44px 0 34px;"></div>
+    <!-- cream, not coral: the subline can sit over the coral numeral, and
+         coral-on-coral drowned it (caught in the 2026-08-18 test render) -->
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:36px; line-height:1.3; color:#F6F1E7; opacity:.92; max-width:820px; text-wrap:pretty;">{{COVER_SUB}}</div>
+  </div>
+
+  <div style="position:absolute; left:72px; bottom:60px; right:72px; display:flex; align-items:baseline; justify-content:space-between; z-index:3;">
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#F6F1E7; opacity:.55;">leiko.health</span>
+    <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:25px; letter-spacing:.2em; color:#F6F1E7;">SWIPE&nbsp;&#8594;</span>
+  </div>
+  <script>
+    (function () {
+      var h = document.getElementById("coverhead"), s = 136;
+      while (s > 78 && h.getBoundingClientRect().height > 400) { s -= 4; h.style.fontSize = s + "px"; }
+    })();
+  </script>
+</div>
+
+<!-- ── BODY: one idea. The step number at 400px, cut by the right trim; the
+     sentence sits inside its shadow. ── -->
+<div class="slide" data-screen-label="body" style="background:#F6F1E7;">
+  <div style="position:absolute; left:72px; top:88px; right:72px; display:flex; align-items:center; justify-content:space-between;">
+    <span class="wordmark" style="color:#0A1E3C;">LEIKO</span>
+    <span class="counter" style="color:#0A1E3C; opacity:.5;">{{BODY_COUNT}}</span>
+  </div>
+
+  <div class="numeral" style="left:64px; top:210px; font-size:400px; color:#FF6B5B;">{{BODY_NUM}}</div>
+
+  <div style="position:absolute; left:72px; top:600px; right:96px;">
+    <div id="bodyhead" style="font-family:'Instrument Serif',serif; font-size:104px; line-height:1.0; letter-spacing:-.01em; color:#0A1E3C; max-width:900px; text-wrap:balance;">{{BODY_HEAD}}</div>
+    <div style="width:180px; height:10px; background:#FF6B5B; margin:44px 0 40px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:38px; line-height:1.4; color:#0A1E3C; opacity:.8; max-width:800px; text-wrap:pretty;">{{BODY_TEXT}}</div>
+  </div>
+
+  <div style="position:absolute; right:72px; bottom:60px; font-family:'Space Grotesk',sans-serif; font-size:22px; color:#0A1E3C; opacity:.55;">leiko.health</div>
+  <script>
+    (function () {
+      var h = document.getElementById("bodyhead"), s = 104;
+      while (s > 60 && h.getBoundingClientRect().height > 320) { s -= 4; h.style.fontSize = s + "px"; }
+    })();
+  </script>
+</div>
+
+<!-- ── CLOSE: the numeral drops out of the bottom trim at 7% opacity; the
+     citation is a cream plate, not fine print. ── -->
+<div class="slide" data-screen-label="close" style="background:#0A1E3C;">
+  <div class="numeral" style="left:-58px; bottom:-190px; font-size:600px; color:#F6F1E7; opacity:.07;">{{CLOSE_COUNT}}</div>
+
+  <div style="position:absolute; left:72px; top:88px; right:72px; display:flex; align-items:center; justify-content:space-between;">
+    <span class="wordmark" style="color:#F6F1E7;">LEIKO</span>
+    <span class="counter" style="color:#F6F1E7; opacity:.55;">{{CLOSE_COUNT}}</span>
+  </div>
+
+  <div style="position:absolute; left:72px; top:280px; right:88px;">
+    <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; letter-spacing:.3em; color:#FF6B5B;">WORTH KEEPING</div>
+    <div id="closehead" style="font-family:'Instrument Serif',serif; font-size:112px; line-height:1.0; letter-spacing:-.015em; color:#F6F1E7; margin-top:40px; text-wrap:balance;">{{CLOSE_HEAD}}</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:34px; line-height:1.42; color:#F6F1E7; opacity:.72; margin-top:38px; max-width:760px; text-wrap:pretty;">{{CLOSE_SUB}}</div>
+  </div>
+
+  <div id="srcplate" style="position:absolute; left:72px; right:72px; bottom:172px; background:#F6F1E7; padding:34px 38px 38px;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <span style="width:46px; height:8px; background:#FF6B5B;"></span>
+      <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:18px; letter-spacing:.3em; color:#0A1E3C;">SOURCE</span>
+    </div>
+    <div id="srctext" style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:27px; line-height:1.4; color:#0A1E3C; margin-top:20px; text-wrap:pretty;">{{CLOSE_SRC}}</div>
+  </div>
+
+  <div style="position:absolute; left:72px; bottom:62px; right:72px; display:flex; align-items:center; gap:18px;">
+    <span class="wordmark" style="color:#F6F1E7;">LEIKO</span>
+    <span style="width:52px; height:2px; background:#FF6B5B;"></span>
+    <span style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#F6F1E7; opacity:.6;">leiko.health</span>
+  </div>
+  <script>
+    (function () {
+      var h = document.getElementById("closehead"), s = 112;
+      while (s > 58 && h.getBoundingClientRect().height > 330) { s -= 4; h.style.fontSize = s + "px"; }
+      var t = document.getElementById("srctext");
+      if (!t.textContent.trim()) document.getElementById("srcplate").style.display = "none";
+    })();
+  </script>
+</div>
+
+</body></html>

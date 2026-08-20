@@ -1,10 +1,30 @@
 # CLAUDE.md — read this before touching anything
 
-This repo is the Leiko weekly content machine. It writes copy, renders three
-social cards, and sends them to leiko.health as **drafts for founder approval**.
+This repo is the Leiko weekly content machine. It writes copy, renders social
+cards, and sends them to leiko.health as **drafts for founder approval**.
 
 Lawrence (founder) is the only person who approves or publishes. Nothing in this
 repo may advance a post's status.
+
+## START HERE (new session, cold start)
+
+The content system spans TWO repos. This one renders; `../leiko` (the website
+worker) orchestrates, approves, schedules, publishes and measures. Read in this
+order — each is current as of 2026-08-20:
+
+| Read | For |
+|---|---|
+| this file | the rules that can damage the brand if broken (product truth, banned words, supplier confidentiality, locked layouts) |
+| `../leiko/docs/CONTENT-OPERATIONS-RUNBOOK.md` | **HOW to run everything** — secrets, endpoints, the daily clock, cadence, gotchas |
+| `../leiko/docs/MASTER-PLAN-STATUS.md` | what's done / running / next / dated-and-gated, tied to the research plan |
+| `../leiko/docs/CONTENT-NEXT-SESSION-PLAN.md` | decisions **D-C1..D-C5** — settled; build to them, never re-litigate |
+| `../leiko/docs/SESSION-HANDOFF-2026-08-*.md` | why things are the way they are, newest last |
+| `docs/CONTENT_ARCHITECTURE.md` | why two systems exist and who owns what |
+
+**The system runs itself.** Ideas → hourly drafts → this PC draws visuals at :15
+→ Telegram approval → twice-daily slots → Facebook + Instagram. The founder's
+only jobs are approving and feeding ideas. Do not add features before reading
+the runbook's gotcha list — every entry there cost a debugging round.
 
 ---
 
